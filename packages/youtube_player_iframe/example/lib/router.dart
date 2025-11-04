@@ -4,7 +4,8 @@
 
 import 'package:go_router/go_router.dart';
 import 'package:youtube_player_iframe_example/pages/home_page.dart';
-import 'package:youtube_player_iframe_example/pages/video_list_page.dart';
+import 'package:youtube_player_iframe_example/pages/youtube_player_flutter.dart';
+import 'package:youtube_player_iframe_example/pages/youtube_player_iframe.dart';
 
 final router = GoRouter(
   routes: [
@@ -13,15 +14,26 @@ final router = GoRouter(
       builder: (_, __) => const HomePage(),
       routes: [
         GoRoute(
-          path: 'playlist',
-          pageBuilder: (_, __) =>
-              const NoTransitionPage(child: VideoListPage()),
-        ),
-        GoRoute(
-          path: 'watch',
+          path: 'home',
           pageBuilder: (_, GoRouterState state) {
             return NoTransitionPage(
-              child: HomePage(videoId: state.uri.queryParameters['v']),
+              child: HomePage(),
+            );
+          },
+        ),
+        GoRoute(
+          path: 'youtube_player_iframe',
+          pageBuilder: (_, GoRouterState state) {
+            return NoTransitionPage(
+              child: PlayerIframe(),
+            );
+          },
+        ),
+        GoRoute(
+          path: 'youtube_player_flutter',
+          pageBuilder: (_, GoRouterState state) {
+            return NoTransitionPage(
+              child: PlayerFlutter(),
             );
           },
         ),

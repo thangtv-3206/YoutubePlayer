@@ -3,8 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:youtube_player_iframe_example/router.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:youtube_player_iframe_example/router.dart';
 
 Future<void> main() async {
   usePathUrlStrategy();
@@ -24,7 +24,7 @@ class YoutubeApp extends StatelessWidget {
     );
 
     return MaterialApp.router(
-      title: 'Youtube Player IFrame Demo',
+      title: 'Youtube Player Demo',
       theme: ThemeData.from(colorScheme: colorScheme),
       debugShowCheckedModeBanner: false,
       routerConfig: router,
